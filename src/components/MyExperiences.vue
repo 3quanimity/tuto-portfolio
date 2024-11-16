@@ -1,31 +1,42 @@
 <script setup>
 import { ref } from 'vue'
 
-let activeBloc = ref(0);
+let activeBloc = ref(1);
 let experiencesList = ref([
+    {
+        company: "Hillstone",
+        title: "Développeur Frontend",
+        date: "Novembre 2024 - Présent",
+    },
     {
         company: "ConformIT",
         title: "Développeur Frontend - VueJS",
         date: "Août 2023 - Octobre 2024",
-        line1: "Conception et maintenance d’applications Web complexes, axées sur une interface utilisateur élégante et performante.",
-        line2: "Traduction fluide des maquettes en composants interactifs et réactifs.",
-        line3: "Participation à des choix architecturaux stratégiques et amélioration continue en équipe Scrum.",
+        tasks: [
+            "Conception et maintenance d’applications Web complexes, axées sur une interface utilisateur élégante et performante.",
+            "Traduction fluide des maquettes en composants interactifs et réactifs.",
+            "Participation à des choix architecturaux stratégiques et amélioration continue en équipe Scrum.",
+        ]
     },
     {
         company: "VERMEG",
         title: "Développeur Frontend - Angular",
         date: "Juillet 2020 - Juillet 2023",
-        line1: "Développement de la plateforme VEGGO, un outil révolutionnaire pour les solutions numériques en finance.",
-        line2: "Implémentation de fonctionnalités robustes, intégration de webservices et optimisation de l’expérience utilisateur.",
-        line3: "Rédaction de documentation technique claire et réalisation de tests unitaires de qualité.",
+        tasks: [
+            "Développement de la plateforme VEGGO, un outil révolutionnaire pour les solutions numériques en finance.",
+            "Implémentation de fonctionnalités robustes, intégration de webservices et optimisation de l’expérience utilisateur.",
+            "Rédaction de documentation technique claire et réalisation de tests unitaires de qualité.",
+        ]
     },
     {
         company: "GoMyCode",
         title: "Développeur Fullstack - React",
         date: "Octobre 2019 - Mars 2020",
-        line1: "Création de la plateforme d'apprentissage GoMyCode en utilisant le stack MERN.",
-        line2: "Conception d’interfaces modernes, réactives et optimisées pour l’éducation en ligne.",
-        line3: "Collaboration agile pour garantir des solutions rapides, fiables et sécurisées.",
+        tasks: [
+            "Création de la plateforme d'apprentissage GoMyCode en utilisant le stack MERN.",
+            "Conception d’interfaces modernes, réactives et optimisées pour l’éducation en ligne.",
+            "Collaboration agile pour garantir des solutions rapides, fiables et sécurisées.",
+        ]
     },
 ]);
 
@@ -58,10 +69,11 @@ const showXp = (id) => {
                     <h3 class="fw600">{{ job.title }}</h3>
                     <span id="date">{{ job.date }}</span>
                     <br />
-                    <p class="fw600 mtb8" style="margin-top: 10px;"><span class="text-highlight-2">✓</span> {{ job.line1
+                    <div v-if="job.tasks" style="margin-top: 10px;">
+                        <p v-for="task in job.tasks" class="fw600 mtb8"><span class="text-highlight-2">✓</span> {{
+                            task
                         }}</p>
-                    <p class="fw600 mtb8"><span class="text-highlight-2">✓</span> {{ job.line2 }}</p>
-                    <p class="fw600 mtb8"><span class="text-highlight-2">✓</span> {{ job.line3 }}</p>
+                    </div>
                 </div>
             </template>
         </div>

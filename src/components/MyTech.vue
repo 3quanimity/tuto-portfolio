@@ -56,7 +56,7 @@
 }
 
 .techno-icon {
-    font-size: 80px;
+    font-size: 60px;
     margin: 0 auto;
     color: var(--vt-c-custom-text-1);
 }
