@@ -13,6 +13,8 @@
             équipe <span class="text-highlight-2">Agile</span> et à participer aux décisions
             architecturales pour garantir des <span class="text-highlight-2">livrables de qualité</span>.
         </p>
+        <!-- TODO: Add contact Page -->
+        <!-- <p><RouterLink to="/contact">Contactez-moi!</RouterLink></p> -->
     </div>
 
 </template>

@@ -9,7 +9,7 @@ import PageHeader from './components/PageHeader.vue'
   </header>
 
   <main>
-    <PortfolioMain />
+    <RouterView/>
   </main>
 </template>
 
