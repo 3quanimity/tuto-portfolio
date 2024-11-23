@@ -1,3 +1,49 @@
+<template>
+  <div class="project">
+    <div class="left fade-in" :class="reverse ? 'reverse' : ''">
+      <h3 class="text-highlight-1">{{ project.name }}</h3>
+      <!-- Carousel for project images -->
+      <div class="carousel">
+        <button
+          v-if="project.images?.length > 1"
+          class="prev"
+          @click="prevImage"
+        >
+          ‹
+        </button>
+        <a
+          :href="`/src/assets/${project.images[currentImage]}`"
+          target="_blank"
+        >
+          <img
+            :src="`/src/assets/${project.images[currentImage]}`"
+            :alt="project.name"
+          />
+        </a>
+        <button
+          v-if="project.images?.length > 1"
+          class="next"
+          @click="nextImage"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div class="right fade-in">
+      <p class="tag" v-for="tag in getProjectTags()">{{ tag }}</p>
+      <p class="description">
+        {{ project.description }}
+      </p>
+      <p class="tasks">
+        <span v-for="task in getProjectTasks()">
+          <span class="text-highlight-2">✓</span> {{ task }}<br />
+        </span>
+      </p>
+    </div>
+  </div>
+</template>
+
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
@@ -48,30 +94,26 @@ const getProjectTags = () => {
 const getProjectTasks = () => {
   return props.project.tasks.split(";");
 };
+
+// For carousel image navigation
+let currentImage = ref(0);
+
+const nextImage = () => {
+  if (currentImage.value < props.project.images.length - 1) {
+    currentImage.value++;
+  } else {
+    currentImage.value = 0;
+  }
+};
+
+const prevImage = () => {
+  if (currentImage.value > 0) {
+    currentImage.value--;
+  } else {
+    currentImage.value = props.project.images.length - 1;
+  }
+};
 </script>
-
-<template>
-  <div class="project">
-    <div class="left fade-in" :class="reverse ? 'reverse' : ''">
-      <h3 class="text-highlight-1">{{ project.name }}</h3>
-      <a :href="`/src/assets/${project.image}`" target="_blank">
-        <img :src="`/src/assets/${project.image}`" :alt="project.name" />
-      </a>
-    </div>
-
-    <div class="right fade-in">
-      <p class="tag" v-for="tag in getProjectTags()">{{ tag }}</p>
-      <p class="description">
-        {{ project.description }}
-      </p>
-      <p class="tasks">
-        <span v-for="task in getProjectTasks()"
-          ><span class="text-highlight-2">✓</span> {{ task }}<br
-        /></span>
-      </p>
-    </div>
-  </div>
-</template>
 
 <style scoped>
 .project {
@@ -127,6 +169,33 @@ const getProjectTasks = () => {
   transition: 0.3s all ease-out;
   transform: scale(0.8);
   display: inline-block;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.carousel .prev {
+  left: 0;
+}
+
+.carousel .next {
+  right: 0;
 }
 
 @media screen and (max-width: 905px) {

@@ -5,7 +5,7 @@ import ProjectSingle from "./ProjectSingle.vue";
 let projects = ref([
   {
     name: "Projet N°1: Jeu du Nanogram",
-    image: "projet1.png",
+    images: ["projet1.png"],
     tags: "VueJS CDN",
     description:
       "Un générateur de grilles et de puzzles de Nonogrammes, développé avec Vue 3 en utilisant le CDN pour une configuration légère et rapide.",
@@ -14,7 +14,7 @@ let projects = ref([
   },
   {
     name: "Projet N°2: Dashboard Vuetify",
-    image: "projet2.png",
+    images: ["projet2.png"],
     tags: "VueJS;Vuetify;VueChart3",
     description:
       "Un tableau de bord interactif permettant d'explorer les revenus d'une entreprise, regroupés par pays et provenant de diverses applications et publicités. Développé avec Vue 3, utilisant les data-tables Vuetify pour une navigation fluide et des graphiques dynamiques avec VueChart3.",
@@ -23,7 +23,7 @@ let projects = ref([
   },
   {
     name: "Projet N°3: Site d'Actualité",
-    image: "projet3.png",
+    images: ["projet3.png"],
     tags: "VueJS;NuxtJS;Bootstrap",
     description:
       "Une interface moderne pour afficher des articles d'actualité extraits d'une API, avec une mise en page stylisée grâce à Bootstrap et une redirection vers les articles correspondants.",
@@ -32,7 +32,7 @@ let projects = ref([
   },
   {
     name: "Projet N°4: Application de Gestion",
-    image: "projet4-1.png",
+    images: ["projet4-1.png", "projet4-2.png", "projet4-3.png"],
     tags: "VueJS;NuxtJS;Vuetify;REST API",
     description:
       "Une application de gestion complète pour la création et la suppression d'utilisateurs et de projets. Elle inclut un tableau de bord interactif pour la visualisation des données et le suivi des indicateurs clés de performance (KPI), avec des fonctionnalités d'authentification et de gestion de sessions utilisateur.",
