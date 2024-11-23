@@ -27,6 +27,15 @@
         >
           ›
         </button>
+        <!-- GitHub link -->
+        <a
+          v-if="project.githubLink"
+          :href="project.githubLink"
+          target="_blank"
+          class="text-highlight-1 github-link"
+        >
+          👉🏼 Voir le projet sur GitHub
+        </a>
       </div>
     </div>
 
@@ -123,6 +132,8 @@ const prevImage = () => {
   grid-column-gap: 20px;
   grid-row-gap: 50px;
   margin-top: 35px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgba(235, 235, 235, 0.64);
 }
 
 .project .left h3 {
@@ -196,6 +207,13 @@ const prevImage = () => {
 
 .carousel .next {
   right: 0;
+}
+
+.github-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 905px) {
