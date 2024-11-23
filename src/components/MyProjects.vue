@@ -35,7 +35,15 @@ let projects = ref([
   },
   {
     name: "Projet N°4: Application de Gestion",
-    images: ["projet4-1.png", "projet4-2.png", "projet4-3.png"],
+    images: [
+      "projet4-1.png",
+      "projet4-2.png",
+      "projet4-3.png",
+      "projet4-4.png",
+      "projet4-5.png",
+      "projet4-6.png",
+      "projet4-7.png",
+    ],
     tags: "VueJS;NuxtJS;Vuetify;REST API",
     description:
       "Une application de gestion complète pour la création et la suppression d'utilisateurs et de projets. Elle inclut un tableau de bord interactif pour la visualisation des données et le suivi des indicateurs clés de performance (KPI), avec des fonctionnalités d'authentification et de gestion de sessions utilisateur.",
