@@ -2,7 +2,7 @@
 
 <template>
   <div id="about-me">
-    <h2 class="text-highlight-1 section-title">Qui suis-je ?</h2>
+    <h2 class="text-highlight-1 section-title">Présentation</h2>
     <p class="default-text">
       Je suis un
       <span class="text-highlight-2">Développeur Front-End</span> expérimenté,

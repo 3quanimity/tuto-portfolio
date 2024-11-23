@@ -34,7 +34,7 @@ import SocialIcon from "@/components/SocialIcon.vue";
 #top-line {
   margin-top: 25px;
   width: 100%;
-  height: 300px;
+  height: 250px;
 }
 
 #top-line #profile-img {
