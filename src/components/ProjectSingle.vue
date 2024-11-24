@@ -11,12 +11,9 @@
         >
           ‹
         </button>
-        <a
-          :href="`./src/assets/${project.images[currentImage]}`"
-          target="_blank"
-        >
+        <a :href="`../assets/${project.images[currentImage]}`" target="_blank">
           <img
-            :src="`./src/assets/${project.images[currentImage]}`"
+            :src="`../assets/${project.images[currentImage]}`"
             :alt="project.name"
           />
         </a>
