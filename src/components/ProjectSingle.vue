@@ -130,7 +130,7 @@ const prevImage = () => {
   grid-row-gap: 50px;
   margin-top: 35px;
   padding-bottom: 35px;
-  border-bottom: 1px solid rgba(235, 235, 235, 0.64);
+  border-bottom: 1px solid #81aaff;
 }
 
 .project .left h3 {

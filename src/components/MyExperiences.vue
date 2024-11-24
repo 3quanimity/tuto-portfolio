@@ -6,12 +6,15 @@ let experiencesList = ref([
   {
     company: "Hillstone",
     title: "Développeur Frontend",
+    emoji: "🚀",
     date: "Novembre 2024 - Présent",
     tasks: ["En phase de perfectionnement pour ma prochaine mission."],
   },
   {
     company: "ConformIT",
-    title: "Développeur Frontend - VueJS",
+    title: "Développeur Frontend",
+    techIcon: "devicon-vuejs-plain",
+    tech: "VueJS",
     date: "Août 2023 - Octobre 2024",
     tasks: [
       "Conception et maintenance d’applications Web complexes, axées sur une interface utilisateur élégante et performante.",
@@ -21,7 +24,9 @@ let experiencesList = ref([
   },
   {
     company: "VERMEG",
-    title: "Développeur Frontend - Angular",
+    title: "Développeur Frontend",
+    techIcon: "devicon-angular-plain",
+    tech: "Angular",
     date: "Juillet 2020 - Juillet 2023",
     tasks: [
       "Développement de la plateforme VEGGO, un outil révolutionnaire pour les solutions numériques en finance.",
@@ -31,7 +36,9 @@ let experiencesList = ref([
   },
   {
     company: "GoMyCode",
-    title: "Développeur Fullstack - React",
+    title: "Développeur Fullstack",
+    techIcon: "devicon-react-plain",
+    tech: "React",
     date: "Octobre 2019 - Mars 2020",
     tasks: [
       "Création de la plateforme d'apprentissage GoMyCode en utilisant le stack MERN.",
@@ -70,7 +77,13 @@ const showXp = (id) => {
           :class="index === activeBloc ? '' : 'hide'"
           :id="'bloc_' + index"
         >
-          <h3 class="fw600">{{ job.title }}</h3>
+          <h3 class="fw600">
+            {{ job.title
+            }}<span v-if="job.techIcon || job.tech">
+              - <i :class="job.techIcon"></i> {{ job.tech }}</span
+            >
+            <span v-if="job.emoji"> - {{ job.emoji }}</span>
+          </h3>
           <span id="date">{{ job.date }}</span>
           <br />
           <div v-if="job.tasks" style="margin-top: 10px">
