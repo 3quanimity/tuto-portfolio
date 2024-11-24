@@ -11,6 +11,7 @@
         >
           ‹
         </button>
+        <img src="../assets/blender.png" />
         <a
           :href="`/src/assets/${project.images[currentImage]}`"
           target="_blank"
