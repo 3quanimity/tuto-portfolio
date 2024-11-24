@@ -12,14 +12,8 @@
           ‹
         </button>
         <img src="../assets/blender.png" />
-        <a
-          :href="'../src/assets/' + project.images[currentImage]"
-          target="_blank"
-        >
-          <img
-            :src="'../src/assets/' + project.images[currentImage]"
-            :alt="project.name"
-          />
+        <a :href="'../src/assets/blender.png'" target="_blank">
+          <img :src="'../src/assets/blender.png'" :alt="project.name" />
         </a>
         <button
           v-if="project.images?.length > 1"
