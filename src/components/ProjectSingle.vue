@@ -13,11 +13,11 @@
         </button>
         <img src="../assets/blender.png" />
         <a
-          :href="`/src/assets/${project.images[currentImage]}`"
+          :href="'../src/assets/' + project.images[currentImage]"
           target="_blank"
         >
           <img
-            :src="`/src/assets/${project.images[currentImage]}`"
+            :src="'../src/assets/' + project.images[currentImage]"
             :alt="project.name"
           />
         </a>
